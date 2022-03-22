@@ -19,7 +19,6 @@ public class principal {
         do {
             opcion = gestion.menu.mostrarMenu();
             switch (opcion) {
-                //Publicacion publicacion = new Publicacion("Titulo " + 501, "Deportes", "Mensual", "Anaya", 501);
                 case "1" -> {
                     String titulo, tipo, periodicidad, editorial;
                     int numEjemplares;
