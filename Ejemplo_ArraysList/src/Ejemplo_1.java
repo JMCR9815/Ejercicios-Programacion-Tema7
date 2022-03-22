@@ -59,13 +59,7 @@ public class Ejemplo_1 {
         }
         System.out.println();
         System.out.println("Borrando numero Pares");
-        Iterator<Integer> iterator = a.iterator();
-        while (iterator.hasNext()) {
-            int valor = (int) iterator.next();
-            if (valor % 2 == 0) {
-                iterator.remove();
-            }
-        }
+        a.removeIf(valor -> valor % 2 == 0);
         System.out.println();
         for (int i = 0; i < a.size(); i++) {
             System.out.println("Posicion " + i + " = " + a.get(i));

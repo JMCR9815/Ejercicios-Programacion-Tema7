@@ -1,41 +1,63 @@
 package GestionPublicacion;
 
+import Menu.Menu_Opciones;
 import Publicaciones.Publicacion;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 public class Gestion {
     String[] tipo = {"Deportes", "Naturaleza", "Ajedrez", "Motor", "Caza", "Vuelo"};
     String[] periodicidad = {"Semanal", "Quincenal", "Mensual"};
     String[] editorial = {"Anaya", "SM", "ZRZ", "CAZA", "EDEBE", "SANTILLANA", "CALABAZA"};
+    String[] opciones = {"1. Nueva publicación", "2. Eliminar publicación", "3. Listar", "4. Eliminar varias", "5. Fin", "Elige opción: "};
     Random rnd = new Random();
+    Menu_Opciones menu = new Menu_Opciones(opciones);
     ArrayList<Publicacion> publicaciones = new ArrayList<>();
 
     public void llenarArray(int limiteEjecucion) {
         for (int i = 0; i <= limiteEjecucion; i++) {
-            publicaciones.add(new Publicacion("tit" + rnd.nextInt(500), tipo[rnd.nextInt(5)], periodicidad[rnd.nextInt(2)], editorial[rnd.nextInt(6)], rnd.nextInt(500)));
+            publicaciones.add(new Publicacion("Titulo " + rnd.nextInt(500), tipo[rnd.nextInt(5)], periodicidad[rnd.nextInt(2)], editorial[rnd.nextInt(6)], rnd.nextInt(500)));
         }
     }
 
     public void mostrarArray() {
-        for (int i = 0; i < publicaciones.size(); i++) {
-            System.out.println(publicaciones.get(i).toString());
+        for (Publicacion publicacione : publicaciones) {
+            System.out.println(publicacione.toString());
         }
     }
 
-    public void addPublicscion(Publicacion publicacion) {
+    public void addPublicacion(Publicacion publicacion) {
         publicaciones.add(publicacion);
+
+    }
+
+    public boolean isExist(String titulo) {
+        boolean bandera = false;
+        for (Publicacion publicacione : publicaciones) {
+            if (publicacione.getTitulo().contains(titulo)) {
+                bandera = true;
+                break;
+            }
+        }
+        return bandera;
     }
 
     public void deletePublicacion(String titulo) {
-        for (int i = 0; i < publicaciones.size(); i++) {
-            if (publicaciones.get(i).getTitulo().equals(titulo)) {
-                publicaciones.remove(i);
-            }
-        }
+        publicaciones.removeIf(publicacion -> publicacion.getTitulo().contains(titulo));
     }
-    public void deleteVariosPublicaciones(String[]titulos){
 
+    public void deleteVariosPublicaciones(int numeroElementos) {
+        Iterator<Publicacion> iterator = publicaciones.iterator();
+        int contador = 0;
+        while (iterator.hasNext()) {
+            iterator.next();
+            if (contador < numeroElementos) {
+                iterator.remove();
+                contador++;
+            }
+
+        }
     }
 }
