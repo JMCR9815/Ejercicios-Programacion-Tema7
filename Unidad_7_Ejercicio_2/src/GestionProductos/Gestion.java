@@ -54,7 +54,6 @@ public class Gestion {
 
     public ArrayList<Productos> getProductsType(String type) {
         ArrayList<Productos> productsPerType = new ArrayList<>(listaProductos.size());
-        int iterador = 0;
         for (Productos listaProducto : listaProductos) {
             if (listaProducto.getClass().getName().toLowerCase().endsWith(type)) {
                 productsPerType.add(listaProducto);
@@ -67,7 +66,7 @@ public class Gestion {
         int contadorProductosEliminados = 0;
         Iterator<Productos> iterator = listaProductos.iterator();
         while (iterator.hasNext()) {
-            if (iterator.next().getClass().getName().endsWith("Congelados")) {
+            if (iterator.next() instanceof Congelados) {
                 contadorProductosEliminados++;
                 iterator.remove();
             }

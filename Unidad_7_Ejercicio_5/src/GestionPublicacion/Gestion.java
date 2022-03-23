@@ -18,7 +18,7 @@ public class Gestion {
 
     public void llenarArray(int limiteEjecucion) {
         for (int i = 0; i <= limiteEjecucion; i++) {
-            publicaciones.add(new Publicacion("Titulo " + rnd.nextInt(500), tipo[rnd.nextInt(5)], periodicidad[rnd.nextInt(2)], editorial[rnd.nextInt(6)], rnd.nextInt(500)));
+            publicaciones.add(new Publicacion("Titulo " + rnd.nextInt(500), tipo[rnd.nextInt(tipo.length)], periodicidad[rnd.nextInt(periodicidad.length)], editorial[rnd.nextInt(editorial.length)], rnd.nextInt(500)));
         }
     }
 

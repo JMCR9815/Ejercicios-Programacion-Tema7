@@ -20,16 +20,18 @@ public class principal {
             opcion = gestion.menu.mostrarMenu();
             switch (opcion) {
                 case "1" -> {
-                    String titulo, tipo, periodicidad, editorial;
+                    String titulo, titulo1, tipo, periodicidad, editorial;
                     int numEjemplares;
+                    entradaScanner.nextLine();
                     System.out.print("Introduce un titulo para la publicacion: ");
                     titulo = entradaScanner.nextLine();
+                    //entradaScanner.nextLine();
                     System.out.print("Indica el tipo de publicacion: ");
-                    tipo = entradaScanner.nextLine();
+                    tipo = entradaScanner.next();
                     System.out.print("Indica la periodicidad de la publicacion: ");
-                    periodicidad = entradaScanner.nextLine();
+                    periodicidad = entradaScanner.next();
                     System.out.print("Introduce la editorial de la publicacion: ");
-                    editorial = entradaScanner.nextLine();
+                    editorial = entradaScanner.next();
                     System.out.print("Introduce el numero de ejemplares: ");
                     numEjemplares = entradaScanner.nextInt();
                     Publicacion publicacion = new Publicacion(titulo, tipo, periodicidad, editorial, numEjemplares);
