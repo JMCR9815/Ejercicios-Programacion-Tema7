@@ -14,7 +14,7 @@ public class Gestion {
     String[] opciones = {"1. Nueva publicación", "2. Eliminar publicación", "3. Listar", "4. Eliminar varias", "5. Fin", "Elige opción: "};
     Random rnd = new Random();
     Menu_Opciones menu = new Menu_Opciones(opciones);
-    ArrayList<Publicacion> publicaciones = new ArrayList<>();
+    private ArrayList<Publicacion> publicaciones = new ArrayList<>();
 
     public void llenarArray(int limiteEjecucion) {
         for (int i = 0; i <= limiteEjecucion; i++) {
