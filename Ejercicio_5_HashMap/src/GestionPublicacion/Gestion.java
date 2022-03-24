@@ -14,7 +14,7 @@ public class Gestion {
     Random rnd = new Random();
     Menu_Opciones menu = new Menu_Opciones(opciones);
 
-    HashMap<Integer, Publicacion> publicacionesHashMap = new HashMap<>();
+    private HashMap<Integer, Publicacion> publicacionesHashMap = new HashMap<>();
 
     public void llenarHashMap(int limiteEjecucion) {
         for (int i = 0; i <= limiteEjecucion; i++) {
