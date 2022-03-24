@@ -73,8 +73,5 @@ public class principal {
                 default -> throw new IllegalStateException("El valor introducido no es valido, por favor seleccione un opcion valida");
             }
         } while (true);
-
-
     }
-
 }
