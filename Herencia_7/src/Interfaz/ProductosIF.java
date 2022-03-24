@@ -5,26 +5,17 @@ import Productos.Productos;
 import java.util.ArrayList;
 
 public interface ProductosIF {
-    static ArrayList<Productos> getListaProductos() {
-        return null;
-    }
 
-    static boolean modificarTemperaturaCongelacion(String id, double temperatura) {
-        return false;
-    }
+    ArrayList<Productos> getListaProductos();
 
-    static ArrayList<Productos> productosFrescosPorPais(String pais) {
-        return null;
-    }
+    boolean modificarTemperaturaCongelacion(String id, double temperatura);
 
-    static ArrayList<Productos> getProductosCaducados() {
-        return null;
-    }
+    ArrayList<Productos> productosFrescosPorPais(String pais);
 
-    static ArrayList<Productos> getProductTipe(String tipo) {
-        return null;
-    }
+    ArrayList<Productos> getProductosCaducados();
 
-    static void crearProductos(int numeroProductos) {
-    }
+    ArrayList<Productos> getProductTipe(String tipo);
+
+    void crearProductos(int numeroProductos);
+
 }

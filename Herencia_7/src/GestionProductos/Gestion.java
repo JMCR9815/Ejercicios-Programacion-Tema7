@@ -43,9 +43,9 @@ public class Gestion implements ProductosIF {
     }
 
     public String mostarProductoConID(String id) {
-        for (int i = 0; i < listaPreoductos.size(); i++) {
-            if (listaPreoductos.get(i).getId_Producto().equals(id)) {
-                return listaPreoductos.get(i).toString();
+        for (Productos listaPreoducto : listaPreoductos) {
+            if (listaPreoducto.getId_Producto().equals(id)) {
+                return listaPreoducto.toString();
             }
         }
         return null;
@@ -53,9 +53,9 @@ public class Gestion implements ProductosIF {
 
     public boolean modificarTemperaturaCongelacion(String id, double temperatura) {
         boolean bandera = false;
-        for (int i = 0; i < listaPreoductos.size(); i++) {
-            if (listaPreoductos.get(i).getId_Producto().equals(id) && listaPreoductos.get(i) instanceof Congelados) {
-                ((Congelados) listaPreoductos.get(i)).setTemperaturaRecomendadaCong(temperatura);
+        for (Productos listaPreoducto : listaPreoductos) {
+            if (listaPreoducto.getId_Producto().equals(id) && listaPreoducto instanceof Congelados) {
+                ((Congelados) listaPreoducto).setTemperaturaRecomendadaCong(temperatura);
                 bandera = true;
             }
         }
