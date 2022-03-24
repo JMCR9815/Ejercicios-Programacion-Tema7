@@ -52,8 +52,6 @@ public class principal {
                     } else {
                         System.out.println("No se ha podido eliminar la publicacion");
                     }
-
-
                 }
                 case "3" -> {
                     System.out.println("Mostrando la lista de publicaciones: ");
@@ -72,11 +70,7 @@ public class principal {
                     System.out.println("Finalizando proceso...");
                     System.exit(0);
                 }
-
-            }
-            if (opcion.equals("6") || opcion.isBlank()) {
-                System.err.println("El valor introducido no es valido, por favor seleccione un opcion valida.");
-                System.out.println();
+                default -> throw new IllegalStateException("El valor introducido no es valido, por favor seleccione un opcion valida");
             }
         } while (true);
 
